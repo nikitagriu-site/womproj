@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for post in posts %}
+    <li>
+        <ul> {{ post.title }}</ul>
+        <p> {{ post.content|truncatewords:20 }}</p>
+        <hr>
+<!--        <button type="button" href="{{ post.get_absolute_url }}" class="btn btn-primary">Читать пост</button>-->
+    </li>
+  {% endfor %}
+{% endblock content %}

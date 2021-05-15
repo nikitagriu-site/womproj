@@ -1,14 +1,29 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def category(request, catid):
-    context = {
-        'catid': catid
-    }
-    return render(request, 'main.html', context)
+from .models import Women
 
-def archive(request, year):
+
+def home(request):
     context = {
-        'year': year
+        'posts': Women.objects.all()
     }
-    return render(request, 'arch.html', context)
+    return render(request, 'home.html', context)
+
+def about(request):
+    context = {
+       
+    }
+    return render(request, 'about.html', context)
+
+def add_page(request):
+    return HttpResponse('')
+
+def login(request):
+    return HttpResponse('')
+
+def show_post(request, post_id):
+    context = {
+
+    }
+    return render(request, 'post.html')
